@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "./node_modules/.bin/live-server ./public",
-    "build": "npx webpack"
+    "build": "npx webpack",
+    "buildToServer": "npm run build && npm run server"
   },
   "keywords": [],
   "author": "",
