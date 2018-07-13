@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ScreenRow = (props) => {
   return (
@@ -9,7 +10,7 @@ const ScreenRow = (props) => {
 }
 
 ScreenRow.propTypes = {
-  value: React.PropTypes.string.isRequired
+  value: PropTypes.string.isRequired
 }
 
 export default ScreenRow;

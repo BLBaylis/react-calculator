@@ -1,5 +1,6 @@
 import React from 'react';
 import Screen from './screen.jsx';
+import Button from './button.jsx';
 
 class Frame extends React.Component {
   constructor() {
