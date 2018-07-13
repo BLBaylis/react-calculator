@@ -5,8 +5,8 @@ const HTMLLabelButton = (props) => {
   return (
     <input
     	type="button"
-     	className={props.type === 'action' ? 'button action-button' : 'button input-button'}
       	onClick={props.handleClick}
+      	className = {props.className}
       	name = {props.name}
       	value = {props.value}
       />
@@ -14,7 +14,6 @@ const HTMLLabelButton = (props) => {
 }
 
 HTMLLabelButton.propTypes = {
-  type: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   value : PropTypes.string.isRequired

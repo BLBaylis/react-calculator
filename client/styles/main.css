@@ -121,25 +121,25 @@ body {
 	height : 16.66%;
 	width : 75%;
 	margin : 0 auto;
-	background-color : #d7f4d7;
 	box-shadow : inset 0 1px 10px -2px rgba(0,0,0,.3);
 	border-radius : 2px;
-	font-family: 'Orbitron', sans-serif;
-	font-size : 35px;
-	overflow : hidden;
+	background-color: #d7f4d7;
 }
 
 .screen-row {
-	display : flex;
-	flex-flow: row nowrap;
 	align-items: center;
 	padding : 0 2.5%;
+	width : 100%;
 	height : 50%;
+	font-family: 'Orbitron', sans-serif;
+	font-size : 35px;
+	overflow : hidden;
+	background-color : transparent;
+	border : none;
 }
 
-.screen-row > input {
-	height : 100%;
-	width : 100%;
+.bottom-screen-row {
+	text-align : right;
 }
 
 .keypad {
@@ -166,6 +166,82 @@ body {
 	transition: all 0.1s ease;
 }
 
+.order-minus-3 {
+	order : -3;
+}
+
+.order-minus-2 {
+	order : -2;
+}
+
+.order-minus-1 {
+	order : -1;
+}
+
+.order-0 {
+	order : 0;
+}
+
+.order-1 {
+	order : 1;
+}
+
+.order-2 {
+	order : 2;
+}
+
+.order-3 {
+	order : 3;
+}
+
+.order-4 {
+	order : 4;
+}
+
+.number {
+	background-color: #edeaea; 
+}
+
+.button:hover {
+	box-shadow:0 3px 20px -2px rgba(0,0,0,.2);
+	transition:all 0.1s ease;
+	transform:translateY(-1px);
+	background-color: rgba(193, 191, 191, .75);
+}
+
+.button.number:hover {
+	background:#f1f1f1;
+}
+
+.equals:hover {  
+	background-color: rgba(76, 175, 80, .85);
+}
+
+.button:active, .equals:active {
+	box-shadow: 0 0 grey;
+	transform: translateY(2px);
+}
+
+.button:focus, .equals:focus {
+	outline : 0;
+}
+
+.delete-btn:hover {
+	background: rgba(244, 67, 54, 0.85);
+}
+
+.delete-btn {
+	order : -2;
+	background: rgba(244, 67, 54, 1);
+	color : white;
+}
+
+.equals {
+	background-color: #4caf50;
+	font-size : 26px;  
+	color : white;
+}
+
 @media (orientation : landscape) {
 	
 	.calculator {
@@ -182,7 +258,7 @@ body {
 		max-height : 1024px;
 	}
 
-	button {
+	.button {
 		width : 20%;
 		padding : 0;
 		margin : 1%;
@@ -210,5 +286,5 @@ body {
 	.keypad {
 		width : 90%;
 	}
-	
+
 }

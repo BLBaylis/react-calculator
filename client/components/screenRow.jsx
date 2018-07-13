@@ -2,15 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ScreenRow = (props) => {
-  return (
-    <div className="screen-row">
-      <input type="text" readOnly value={props.value}/>
-    </div>
-  )
+  return <input className={"screen-row " + props.className} type="text" readOnly value={props.value}/>
 }
 
 ScreenRow.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired
 }
 
 export default ScreenRow;
