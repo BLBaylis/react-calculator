@@ -1,70 +1,71 @@
 import React from 'react';
 import Screen from './screen.jsx';
 import Button from './button.jsx';
+import HTMLLabelButton from './htmlLabelButton.jsx';
 
 class Frame extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      question: '',
-      answer: ''
-    }
-    this.handleClick = this.handleClick.bind(this);
-  }
+  	constructor() {
+    	super();
+    	this.state = {
+      		displayQuestion: '',
+      		internalQuestion : '',
+      		answer: ''
+    	}
+    	this.handleClick = this.handleClick.bind(this);
+  	}
 
-  render() {
-    return (
-      <div className="frame">
-        <div className="calculator-title">
-          R_N Calculator
-        </div>
-        <Screen question={this.state.question} answer={this.state.answer}/>
-        <div className="button-row">
-          <Button label={'1'} handleClick={this.handleClick} type='input' />
-          <Button label={'2'} handleClick={this.handleClick} type='input' />
-          <Button label={'3'} handleClick={this.handleClick} type='input' />
-          <Button label={'4'} handleClick={this.handleClick} type='input' />
-          <Button label={'-'} handleClick={this.handleClick} type='action' />
-          <Button label={'+'} handleClick={this.handleClick} type='action' />
-        </div>
-        <div className="button-row">
-          <Button label={'5'} handleClick={this.handleClick} type='input' />
-          <Button label={'6'} handleClick={this.handleClick} type='input' />
-          <Button label={'7'} handleClick={this.handleClick} type='input' />
-          <Button label={'8'} handleClick={this.handleClick} type='input' />
-          <Button label={'*'} handleClick={this.handleClick} type='action' />
-          <Button label={'/'} handleClick={this.handleClick} type='action' />
-        </div>
-        <div className="button-row">
-          <Button label={'9'} handleClick={this.handleClick} type='input' />
-          <Button label={'.'} handleClick={this.handleClick} type='input' />
-          <Button label={'0'} handleClick={this.handleClick} type='input' />
-          <Button label={'Cls'} handleClick={this.handleClick} type='action' />
-          <Button label={'='} handleClick={this.handleClick} type='action' />
-        </div>
-      </div>
-    );
-  }
+  	render() {
+   		return (
+      	<div className="calculator">
+        	<Screen question={this.state.displayQuestion} answer={this.state.answer}/>
+        	<div className = "keypad">
+          		<Button name={'AC'} handleClick={this.handleClick} type='action' />
+          		<Button name={'DEL'} handleClick={this.handleClick} type='action' />
+          		<Button name={'ANS'} handleClick={this.handleClick} type='action' />
+          		<HTMLLabelButton name = {'*'} value='&times;' handleClick={this.handleClick} type='action' />
+          		<Button name={'7'} handleClick={this.handleClick} type='input' />
+          		<Button name={'8'} handleClick={this.handleClick} type='input' />
+          		<Button name={'9'} handleClick={this.handleClick} type='input' />
+          		<Button name={'/'} handleClick={this.handleClick} type='action' />
+          		<Button name={'4'} handleClick={this.handleClick} type='input' />
+          		<Button name={'5'} handleClick={this.handleClick} type='input' />
+          		<Button name={'6'} handleClick={this.handleClick} type='input' />
+          		<Button name={'+'} handleClick={this.handleClick} type='action' />
+          		<Button name={'1'} handleClick={this.handleClick} type='input' />
+          		<Button name={'2'} handleClick={this.handleClick} type='input' />
+          		<Button name={'3'} handleClick={this.handleClick} type='input' />
+          		<Button name={'-'} handleClick={this.handleClick} type='action' />
+          		<Button name={'0'} handleClick={this.handleClick} type='input' />
+          		<Button name={'(-)'} handleClick={this.handleClick} type='action' />
+          		<Button name={'.'} handleClick={this.handleClick} type='input' />
+          		<Button name={'='} handleClick={this.handleClick} type='action' />
+        	</div>
+      	</div>
+    	);
+  	}	
 
 
-  handleClick(event){
-    const value = event.target.value;
-    switch (value) {
-      case '=': {
-        const answer = eval(this.state.question).toString();
-        this.setState({ answer });
-        break;
-      }
-      case 'Cls': {
-        this.setState({ question: '', answer: '' });
-        break;
-      }
-      default: {
-        this.setState({ question: this.state.question += value})
-        break;
-      }
-    }
-  }
+  	handleClick(event){
+    	const name = event.target.name;
+    	const value = event.target.value;
+    	console.log(value);
+    	switch (name) {
+      		case '=': {
+        		const answer = eval(this.state.internalQuestion).toString();
+        		this.setState({ answer });
+        		break;
+      		}
+      		case 'Cls': {
+        		this.setState({ internalQuestion: '', displayQuestion: '', answer: '' });
+        		break;
+      		}
+      		default: {
+        		this.setState({ internalQuestion: this.state.internalQuestion += name, displayQuestion: this.state.displayQuestion += value});
+        		console.log(this.state);
+        		break;
+      		}
+    	}
+  	}
 }
 
 export default Frame;

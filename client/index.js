@@ -5,5 +5,5 @@ import './styles/main.css';
 
 ReactDOM.render(
   <Frame/>, 
-  document.getElementById('app')
+  document.getElementsByTagName('body')[0]
 );
