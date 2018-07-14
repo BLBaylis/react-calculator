@@ -19,26 +19,26 @@ class Frame extends React.Component {
       	<div className="calculator">
         	<Screen question={this.state.displayQuestion} answer={this.state.answer}/>
         	<div className = "keypad">
-          		<Button name={'AC'} handleClick={this.handleClick} className='button order-minus-2 delete-btn' />
-          		<Button name={'DEL'} handleClick={this.handleClick} className='button order-minus-2 delete-btn' />
-          		<Button name={'ANS'} handleClick={this.handleClick} className='button order-4' />
-          		<HTMLLabelButton name = {'*'} value='&times;' handleClick={this.handleClick} className='button order-0' />
-          		<Button name={'7'} handleClick={this.handleClick} className='button order-minus-3 number' />
-          		<Button name={'8'} handleClick={this.handleClick} className='button order-minus-3 number' />
-          		<Button name={'9'} handleClick={this.handleClick} className='button order-minus-3 number' />
-          		<HTMLLabelButton name = {'/'} value='&divide;' handleClick={this.handleClick} className='button order-0' />
-          		<Button name={'4'} handleClick={this.handleClick} className='button order-minus-1 number' />
-          		<Button name={'5'} handleClick={this.handleClick} className='button order-minus-1 number' />
-          		<Button name={'6'} handleClick={this.handleClick} className='button order-minus-1 number' />
-          		<HTMLLabelButton name = {'+'} value='&#43;' handleClick={this.handleClick} className='button order-2' />
-          		<Button name={'1'} handleClick={this.handleClick} className='button order-1 number' />
-          		<Button name={'2'} handleClick={this.handleClick} className='button order-1 number' />
-          		<Button name={'3'} handleClick={this.handleClick} className='button order-1 number' />
-          		<HTMLLabelButton name = {'-'} value='&minus;' handleClick={this.handleClick} className='button order-2' />
-          		<Button name={'0'} handleClick={this.handleClick} className='button order-3 number' />
-          		<Button name={'.'} handleClick={this.handleClick} className='button order-3 number' />
-          		<HTMLLabelButton name={'(-)'} value = '( &minus; )' handleClick={this.handleClick} className='button order-3 number' />
-          		<Button name={'='} handleClick={this.handleClick} className='button order-4 equals' />
+          		<Button name={'AC'} handleClick={this.handleClick} className='button button--order-minus-2 button--delete-btn' />
+          		<Button name={'DEL'} handleClick={this.handleClick} className='button button--order-minus-2 button--delete-btn' />
+          		<Button name={'ANS'} handleClick={this.handleClick} className='button button--order-4' />
+          		<HTMLLabelButton name = {'*'} value='&times;' handleClick={this.handleClick} className='button button--order-0' />
+          		<Button name={'7'} handleClick={this.handleClick} className='button button--order-minus-3 button--number' />
+          		<Button name={'8'} handleClick={this.handleClick} className='button button--order-minus-3 button--number' />
+          		<Button name={'9'} handleClick={this.handleClick} className='button button--order-minus-3 button--number' />
+          		<HTMLLabelButton name = {'/'} value='&divide;' handleClick={this.handleClick} className='button button--order-0' />
+          		<Button name={'4'} handleClick={this.handleClick} className='button button--order-minus-1 button--number' />
+          		<Button name={'5'} handleClick={this.handleClick} className='button button--order-minus-1 button--number' />
+          		<Button name={'6'} handleClick={this.handleClick} className='button button--order-minus-1 button--number' />
+          		<HTMLLabelButton name = {'+'} value='&#43;' handleClick={this.handleClick} className='button button--order-2' />
+          		<Button name={'1'} handleClick={this.handleClick} className='button button--order-1 button--number' />
+          		<Button name={'2'} handleClick={this.handleClick} className='button button--order-1 button--number' />
+          		<Button name={'3'} handleClick={this.handleClick} className='button button--order-1 button--number' />
+          		<HTMLLabelButton name = {'-'} value='&minus;' handleClick={this.handleClick} className='button button--order-2' />
+          		<Button name={'0'} handleClick={this.handleClick} className='button button--order-3 button--number' />
+          		<Button name={'.'} handleClick={this.handleClick} className='button button--order-3 button--number' />
+          		<HTMLLabelButton name={'(-)'} value = '( &minus; )' handleClick={this.handleClick} className='button button--order-3 button--number' />
+          		<Button name={'='} handleClick={this.handleClick} className='button button--order-4 button--equals' />
         	</div>
       	</div>
     	);

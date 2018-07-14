@@ -6,7 +6,7 @@ const Screen = (props) => {
   return (
     <div className="screen">
       <ScreenRow value={props.question}/>
-      <ScreenRow className="bottom-screen-row" value={props.answer}/>
+      <ScreenRow className="screen__row--bottom" value={props.answer}/>
     </div>
   );
 }

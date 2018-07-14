@@ -1,99 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 html {
 	height : 100%;
 }
@@ -126,7 +30,7 @@ body {
 	background-color: #d7f4d7;
 }
 
-.screen-row {
+.screen__row {
 	align-items: center;
 	padding : 0 2.5%;
 	width : 100%;
@@ -138,7 +42,7 @@ body {
 	border : none;
 }
 
-.bottom-screen-row {
+.screen__row--bottom {
 	text-align : right;
 }
 
@@ -166,39 +70,39 @@ body {
 	transition: all 0.1s ease;
 }
 
-.order-minus-3 {
+.button--order-minus-3 {
 	order : -3;
 }
 
-.order-minus-2 {
+.button--order-minus-2 {
 	order : -2;
 }
 
-.order-minus-1 {
+.button--order-minus-1 {
 	order : -1;
 }
 
-.order-0 {
+.button--order-0 {
 	order : 0;
 }
 
-.order-1 {
+.button--order-1 {
 	order : 1;
 }
 
-.order-2 {
+.button--order-2 {
 	order : 2;
 }
 
-.order-3 {
+.button--order-3 {
 	order : 3;
 }
 
-.order-4 {
+.button--order-4 {
 	order : 4;
 }
 
-.number {
+.button--number {
 	background-color: #edeaea; 
 }
 
@@ -209,34 +113,34 @@ body {
 	background-color: rgba(193, 191, 191, .75);
 }
 
-.button.number:hover {
+.button--number:hover {
 	background:#f1f1f1;
 }
 
-.equals:hover {  
+.button--equals:hover {  
 	background-color: rgba(76, 175, 80, .85);
 }
 
-.button:active, .equals:active {
+.button:active, .button--equals:active {
 	box-shadow: 0 0 grey;
 	transform: translateY(2px);
 }
 
-.button:focus, .equals:focus {
+.button:focus, .button--equals:focus {
 	outline : 0;
 }
 
-.delete-btn:hover {
+.button--delete-btn:hover {
 	background: rgba(244, 67, 54, 0.85);
 }
 
-.delete-btn {
+.button--delete-btn {
 	order : -2;
 	background: rgba(244, 67, 54, 1);
 	color : white;
 }
 
-.equals {
+.button--equals {
 	background-color: #4caf50;
 	font-size : 26px;  
 	color : white;
@@ -271,7 +175,7 @@ body {
 		transition: all 0.1s ease;
 	}
 
-	.number, #ac, #del, #equals, #ans, .decimal, #empty, .operator {
+	.button {
     	order : 0;
   	}
 
