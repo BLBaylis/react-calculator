@@ -9,7 +9,8 @@ class Frame extends React.Component {
     	this.state = {
       		displayQuestion: '',
       		internalQuestion : '',
-      		answer: ''
+      		displayAnswer: '',
+      		internalAnswer: ''
     	}
     	this.handleClick = this.handleClick.bind(this);
   	}
@@ -17,7 +18,7 @@ class Frame extends React.Component {
   	render() {
    		return (
       	<div className="calculator">
-        	<Screen question={this.state.displayQuestion} answer={this.state.answer}/>
+        	<Screen question={this.state.displayQuestion} answer={this.state.displayAnswer}/>
         	<div className = "keypad">
           		<Button name={'AC'} handleClick={this.handleClick} className='button button--order-minus-2 button--delete-btn' />
           		<Button name={'DEL'} handleClick={this.handleClick} className='button button--order-minus-2 button--delete-btn' />
@@ -50,19 +51,22 @@ class Frame extends React.Component {
     	const value = event.target.value;
     	switch (name) {
       		case '=': {
-        		const answer = eval(this.state.internalQuestion).toString();
-        		this.setState({ answer });
+        		const displayAnswer = eval(this.state.internalQuestion).toString();
+        		this.setState({ displayAnswer, internalAnswer: displayAnswer});
         		break;
       		}
       		case 'AC': {
-        		this.setState({ internalQuestion: '', displayQuestion: '', answer: '' });
+        		this.setState({ internalQuestion: '', displayQuestion: '', displayAnswer: ''});
         		break;
       		}
       		case 'DEL': {
       			let displayQuestion = this.state.displayQuestion;
       			let sliceTo = displayQuestion[displayQuestion.length -1] === 'S' ? -3 : -1;
-      			console.log(this.state.internalQuestion);
       			this.setState({ internalQuestion: this.state.internalQuestion.slice(0, sliceTo), displayQuestion: this.state.displayQuestion.slice(0, sliceTo)});
+      			break;
+      		}
+      		case 'ANS': {
+      			this.setState({ internalQuestion: this.state.internalQuestion += this.state.internalAnswer, displayQuestion: this.state.displayQuestion += value});
       			break;
       		}
       		default: {
