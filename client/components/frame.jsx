@@ -66,7 +66,12 @@ class Frame extends React.Component {
       			break;
       		}
       		case 'ANS': {
-      			this.setState({ internalQuestion: this.state.internalQuestion += this.state.internalAnswer, displayQuestion: this.state.displayQuestion += value});
+      			if (this.state.internalAnswer === "") {
+      				this.setState({displayAnswer: "ANS is not yet defined!"});
+      			} else {
+      				let newIntAnswer = /\d/.test(this.state.internalQuestion[this.state.internalQuestion.length - 1]) ? "*" + this.state.internalAnswer : this.state.internalAnswer;
+      				this.setState({ internalQuestion: this.state.internalQuestion += newIntAnswer, displayQuestion: this.state.displayQuestion += value})
+      			}
       			break;
       		}
       		default: {
