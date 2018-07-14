@@ -1,7 +1,7 @@
 import React from 'react'; 
 import ReactDOM from 'react-dom'; 
 import Frame from './components/frame.jsx';
-import './styles/main.css';
+import './styles/scss/main.scss';
 
 ReactDOM.render(
   <Frame/>, 

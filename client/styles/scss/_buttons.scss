@@ -1,0 +1,64 @@
+.button {
+	width : 15%;
+	padding : 0;
+	margin : 1%;
+	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	border : none;
+	font-weight : bold;
+	background-color : #c1bfbf;
+	border-radius : 3px;
+	font-size : 26px;
+	transition: all 0.1s ease;
+}
+
+@for $i from 1 through 3 {
+	.button--order-minus-#{$i} {order : $i * -1;}
+}
+
+@for $i from 0 through 4 {
+	.button--order-#{$i} {order : $i;}
+}
+
+.button--number {
+	background-color: #edeaea; 
+}
+
+.button:hover {
+	box-shadow:0 3px 20px -2px rgba(0,0,0,.2);
+	transition:all 0.1s ease;
+	transform:translateY(-1px);
+	background-color: rgba(193, 191, 191, .75);
+}
+
+.button--number:hover {
+	background-color:#f1f1f1;
+}
+
+.button--equals:hover {  
+	background-color: rgba(76, 175, 80, .85);
+}
+
+.button:active, .button--equals:active {
+	box-shadow: 0 0 grey;
+	transform: translateY(2px);
+}
+
+.button:focus, .button--equals:focus {
+	outline : 0;
+}
+
+.button--delete-btn:hover {
+	background-color: rgba(244, 67, 54, 0.85);
+}
+
+.button--delete-btn {
+	order : -2;
+	background-color: rgba(244, 67, 54, 1);
+	color : white;
+}
+
+.button--equals {
+	background-color: #4caf50;
+	font-size : 26px;  
+	color : white;
+}
