@@ -58,9 +58,15 @@ class Frame extends React.Component {
         		this.setState({ internalQuestion: '', displayQuestion: '', answer: '' });
         		break;
       		}
+      		case 'DEL': {
+      			let displayQuestion = this.state.displayQuestion;
+      			let sliceTo = displayQuestion[displayQuestion.length -1] === 'S' ? -3 : -1;
+      			console.log(this.state.internalQuestion);
+      			this.setState({ internalQuestion: this.state.internalQuestion.slice(0, sliceTo), displayQuestion: this.state.displayQuestion.slice(0, sliceTo)});
+      			break;
+      		}
       		default: {
         		this.setState({ internalQuestion: this.state.internalQuestion += name, displayQuestion: this.state.displayQuestion += value});
-        		console.log(this.state);
         		break;
       		}
     	}
